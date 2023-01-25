@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="icon" href="back.png">
+    <style>
+        #preloader {
+            position: fixed;
+            display: grid;
+            place-items: center;
+            z-index: 100;
+            width: 100vw;
+            height: 100vh;
+            overflow-y: hidden;
+            background: #2a2826;
+        }
+
+        #img {
+            width: min(80vw, 80vh);
+            aspect-ratio: 1;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            place-items: center;
+            background-image: url("wave.gif");
+            background-position: center;
+            background-size: 140%;
+            background-repeat: no-repeat;
+        }
+
+        #img img {
+
+            filter: drop-shadow(0 0 min(2vw, 2vh) black);
+            width: min(35vw, 35vh);
+            animation-name: zoom;
+            animation-duration: 1.5s;
+            animation-delay: 0.75s;
+            animation-iteration-count: infinite;
+        }
+
+        #name {
+            margin: 0;
+            padding: min(2vw, 2vh);
+            color: rgb(255, 255, 255);
+            background: #810d0d;
+            border-radius: min(10vw, 10vh);
+            box-shadow: 0 0 min(2vw, 2vh) rgba(0, 0, 0, 0.562);
+            font-family: 'Montserrat', cursive;
+            letter-spacing: min(0.2vw, 0.2vh);
+            font-weight: bold;
+            display: inline-block;
+            -webkit-tap-highlight-color: transparent;
+            animation-name: zoom;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            width: min(32vw, 32vh);
+            font-size: min(5vw, 5vh);
+
+        }
+
+        @keyframes zoom {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(0.96);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        #out {
+            text-align: center;
+        }
+
+        body {
+            overflow: hidden;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body id="body" class="img-fluid">
+    <div id="preloader">
+        <div id="out">
+            <div id="img">
+                <img src="me.png" alt="" class="img-fluid">
+            </div>
+
+            <h4 id="name" onclick="history.go(-1)">
+                <i class="bi bi-caret-left-fill me-1"></i>Back
+            </h4>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
